@@ -75,7 +75,7 @@ module.exports = {
 
       if(result) {
         const token = jwt.sign({
-          student: student.id,
+          student_id: student.id,
           name: student.name,
           email: student.email,
         }, jwt_secret, {

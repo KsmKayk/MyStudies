@@ -2,6 +2,7 @@ const { Router } = require("express");
 const teacherController = require("./controllers/teacherController")
 const studentController = require("./controllers/studentController")
 const courseController = require("./controllers/courseController")
+const registrationController = require("./controllers/registrationController")
 
 const teacherLogin = require("./middlewares/teacherLogin")
 const studentLogin = require("./middlewares/studentLogin")
@@ -21,7 +22,11 @@ routes.put("/student/edit/:id",studentLogin, studentController.update);
 routes.delete("/student/delete/:id",studentLogin, studentController.delete);
 
 routes.get("/course", courseController.index);
-routes.post("/course/register",teacherLogin, courseController.store);
+routes.post("/course/create",teacherLogin, courseController.store);
 routes.put("/course/edit/:id",teacherLogin, courseController.update);
 routes.delete("/course/delete/:id",teacherLogin, courseController.delete);
+
+routes.get("/registration", registrationController.index);
+routes.post("/registration/create",studentLogin, registrationController.store);
+routes.delete("/registration/delete/:id",studentLogin, registrationController.delete);
 module.exports = routes;
