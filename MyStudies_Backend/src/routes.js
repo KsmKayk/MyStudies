@@ -3,6 +3,7 @@ const teacherController = require("./controllers/teacherController")
 const studentController = require("./controllers/studentController")
 const courseController = require("./controllers/courseController")
 const registrationController = require("./controllers/registrationController")
+const lessonController = require("./controllers/lessonController")
 
 const teacherLogin = require("./middlewares/teacherLogin")
 const studentLogin = require("./middlewares/studentLogin")
@@ -29,4 +30,9 @@ routes.delete("/course/delete/:id",teacherLogin, courseController.delete);
 routes.get("/registration", registrationController.index);
 routes.post("/registration/create",studentLogin, registrationController.store);
 routes.delete("/registration/delete/:id",studentLogin, registrationController.delete);
+
+routes.get("/lesson",lessonController.index);
+routes.post("/lesson/create",teacherLogin, lessonController.store);
+routes.put("/lesson/edit/:id",teacherLogin, lessonController.update);
+routes.delete("/lesson/delete/:id",teacherLogin, lessonController.delete)
 module.exports = routes;
