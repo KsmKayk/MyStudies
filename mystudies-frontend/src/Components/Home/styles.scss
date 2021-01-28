@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+
+#nav-home {
+  box-shadow: 4px 5px 30px 5px rgba(0, 0, 0, 0.09);
+}
+
+#title-nav-home {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 30px;
+}
+
+#login-btn-home {
+  margin-right: 10px;
+}
+
+:root {
+  --swiper-theme-color: #fff;
+}
+
+.courses-container-home {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: -40px;
+  max-width: 90%;
+  img {
+    max-width: 250px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .swiper-button-prev {
+    margin-left: 10px;
+  }
+  .swiper-button-next {
+    margin-right: 10px;
+  }
+
+  .swiper-wrapper {
+    padding: 20px 0px;
+  }
+
+  .swiper-slide {
+    transition: 250ms all;
+
+    &:hover {
+      transform: scale(1.2);
+      z-index: 1;
+    }
+
+    &:first-child:hover {
+      margin: 0 40px;
+    }
+    &:last-child:hover {
+      margin: 0 -40px;
+    }
+  }
+}
